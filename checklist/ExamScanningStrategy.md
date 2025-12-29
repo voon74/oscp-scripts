@@ -96,7 +96,14 @@ echo "10.11.1.100  # AD DC" >> ~/oscp/targets.txt
 echo "10.11.1.110  # AD WS1" >> ~/oscp/targets.txt
 echo "10.11.1.120  # AD WS2" >> ~/oscp/targets.txt
 
+Step 2: Safe Initial Scan
+# Use your safe scanner
+./safe_scan.sh
 
+# OR manually (safe)
+for ip in $(cat ~/oscp/targets.txt | cut -d' ' -f1); do
+    nmap -sC -sV -oA ~/oscp/scans/initial_$ip $ip &
+done
 
 
 
