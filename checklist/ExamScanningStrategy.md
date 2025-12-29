@@ -105,6 +105,11 @@ for ip in $(cat ~/oscp/targets.txt | cut -d' ' -f1); do
     nmap -sC -sV -oA ~/oscp/scans/initial_$ip $ip &
 done
 
+Step 3: Focused Attacks
+# Pick based on scan results
+# Example: 10.11.1.5 has port 80 open
+gobuster dir -u http://10.11.1.5 -w ~/oscp/wordlists/quick/directories.txt
+
 
 
 
