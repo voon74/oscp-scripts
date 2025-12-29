@@ -226,7 +226,7 @@ cat > ~/oscp/templates/machine_template.md << 'EOF'
 ## Initial Recon
 ### Nmap Results
 ```bash
-# Paste nmap output here
+# Paste nmap output here #
 
 
 Enumeration Findings
