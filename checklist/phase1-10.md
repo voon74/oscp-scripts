@@ -39,7 +39,7 @@ EOF
 chmod +x ~/check_tools.sh
 ./check_tools.sh
 
-
+## Phase 3: Install Missing Essentials
 
 
 
