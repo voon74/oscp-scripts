@@ -229,7 +229,73 @@ cat > ~/oscp/templates/machine_template.md << 'EOF'
 # Paste nmap output here
 
 
+Enumeration Findings
+Web (Port 80/443)
+Directory brute results
 
+Technologies found
+
+Interesting pages
+
+SMB (Port 139/445)
+Shares found
+
+Null session access
+
+Users enumerated
+
+Other Services
+SSH version/access
+
+FTP access
+
+Database services
+
+Vulnerability Identification
+Potential Vulnerabilities
+[Service] [Version] - [CVE/Exploit]
+
+[Service] [Version] - [CVE/Exploit]
+
+Exploitation
+Steps to Initial Access
+Proof of User Access
+Command: whoami
+
+Output:
+
+Screenshot: [filename.png]
+
+Privilege Escalation
+Enumeration Results
+Kernel version:
+
+SUID binaries:
+
+Cron jobs:
+
+Sudo permissions:
+
+Escalation Path
+Proof of Root Access
+Command: id
+
+Output:
+
+Screenshot: [filename.png]
+
+Flags Captured
+user.txt: [content/redacted]
+
+root.txt: [content/redacted]
+
+Lessons Learned
+What worked:
+
+What didn't:
+
+Time spent: [hours]
+EOF
 
 
 
