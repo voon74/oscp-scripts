@@ -136,11 +136,46 @@ EOF
 /secure
 EOF
 
+Medium Lists (If quick fails):
+Copy first 1000 from rockyou
+- [ ] head -1000 /usr/share/wordlists/rockyou.txt > ~/oscp/wordlists/medium/passwords_top1000.txt
 
+Common directories medium list
+- [ ] cp /usr/share/seclists/Discovery/Web-Content/common.txt ~/oscp/wordlists/medium/directories_common.txt
 
+## Phase 6: Essential OSCP Scripts
+A. Quick Recon Script:
+cat > ~/oscp/scripts/recon/quick_scan.sh << 'EOF'
+#!/bin/bash
+# Quick recon for OSCP exam
+TARGET=$1
+OUTDIR=~/oscp/scans
 
+if [ -z "$TARGET" ]; then
+    echo "Usage: $0 <target_ip>"
+    exit 1
+fi
 
+echo "=== Scanning $TARGET ==="
+mkdir -p $OUTDIR
 
+# Quick port scan
+echo "[+] Quick port scan..."
+nmap -p- --min-rate=1000 -T4 $TARGET -oN $OUTDIR/${TARGET}_quick.txt
+
+# Service scan on open ports
+echo "[+] Service scan..."
+ports=$(grep "^[0-9]" $OUTDIR/${TARGET}_quick.txt | cut -d'/' -f1 | tr '\n' ',')
+nmap -sC -sV -p${ports} $TARGET -oN $OUTDIR/${TARGET}_services.txt
+
+# UDP top 100
+echo "[+] UDP scan (top 100)..."
+nmap -sU --top-ports=100 $TARGET -oN $OUTDIR/${TARGET}_udp.txt
+
+echo "[+] Done! Results in $OUTDIR/"
+EOF
+
+chmod +x ~/oscp/scripts/recon/quick_scan.sh
 
 
 
