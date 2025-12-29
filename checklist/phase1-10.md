@@ -40,12 +40,29 @@ chmod +x ~/check_tools.sh
 ./check_tools.sh
 
 ## Phase 3: Install Missing Essentials
-Wordlists (CRITICAL for OSCP)
+A. Wordlists (CRITICAL for OSCP)
 - [ ] sudo apt install -y seclists
 - [ ] sudo gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
 - [ ] ls -lh /usr/share/wordlists/rockyou.txt (Should be ~134MB)
 
-
-
+B. Additional Useful Tools
+# Tools that might be missing
+- [ ] sudo apt install -y \
+    enum4linux \
+    smbmap \
+    crackmapexec \
+    evil-winrm \
+    powershell-empire \
+    nessus \
+    gobuster \
+    ffuf \
+    wfuzz \
+    sqlmap \
+    john \
+    hashcat \
+    steghide \
+    exiftool \
+    binwalk \
+    strings
 
 
