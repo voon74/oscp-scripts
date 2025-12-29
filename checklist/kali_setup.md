@@ -80,7 +80,7 @@ Your Kali VM (tun0: 10.11.1.x)
        ├── 10.11.1.20   (25 pts)
        └── 10.11.1.100-120  (AD set - 40 pts)
            
-           NO OTHER HOSTS EXIST!
+
 
 
 
