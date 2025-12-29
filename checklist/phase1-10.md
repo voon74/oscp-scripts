@@ -69,12 +69,72 @@ B. Additional Useful Tools
 Create the standard OSCP exam structure
 - [ ] mkdir -p ~/oscp/{machines,notes,scans,loot,proof,scripts,templates,wordlists}
 
- Subdirectories for organization
+Subdirectories for organization
+- [ ] mkdir -p ~/oscp/wordlists/{quick,medium,custom,targeted}
+- [ ] mkdir -p ~/oscp/notes/{methodology,commands,references}
+- [ ] mkdir -p ~/oscp/scripts/{recon,privesc,enum,post}
+- [ ] mkdir -p ~/screenshots
 
+## Phase 5: Create Custom Wordlists (Your Secret Weapon)
+Quick Attack Lists:
+# 1. Ultra-quick passwords (first attempt)
+cat > ~/oscp/wordlists/quick/passwords_top20.txt << 'EOF'
 
+password
+123456
+admin
+root
+12345
+1234
+123
+admin123
+password123
+qwerty
+test
+welcome
+monkey
+letmein
+dragon
+baseball
+football
+mustang
+master
+michael
+shadow
+EOF
 
+# 2. Quick usernames
+cat > ~/oscp/wordlists/quick/usernames.txt << 'EOF'
+root
+admin
+administrator
+user
+test
+guest
+administrateur
+adm
+mysql
+oracle
+postgres
+ftp
+ssh
+www-data
+EOF
 
-
+# 3. Quick directories
+cat > ~/oscp/wordlists/quick/directories.txt << 'EOF'
+/
+/admin
+/phpmyadmin
+/backup
+/log
+/test
+/dev
+/secret
+/hidden
+/private
+/secure
+EOF
 
 
 
