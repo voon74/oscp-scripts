@@ -78,7 +78,7 @@ Subdirectories for organization
 ## Phase 5: Create Custom Wordlists (Your Secret Weapon)
 Quick Attack Lists:
 # 1. Ultra-quick passwords (first attempt)
-cat > ~/oscp/wordlists/quick/passwords_top20.txt << 'EOF'
+- [ ] cat > ~/oscp/wordlists/quick/passwords_top20.txt << 'EOF'
 
 password
 123456
@@ -104,7 +104,7 @@ shadow
 EOF
 
 # 2. Quick usernames
-cat > ~/oscp/wordlists/quick/usernames.txt << 'EOF'
+- [ ] cat > ~/oscp/wordlists/quick/usernames.txt << 'EOF'
 root
 admin
 administrator
@@ -122,7 +122,7 @@ www-data
 EOF
 
 # 3. Quick directories
-cat > ~/oscp/wordlists/quick/directories.txt << 'EOF'
+- [ ] cat > ~/oscp/wordlists/quick/directories.txt << 'EOF'
 /
 /admin
 /phpmyadmin
