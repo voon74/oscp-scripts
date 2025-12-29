@@ -225,10 +225,10 @@ cat > ~/oscp/templates/machine_template.md << 'EOF'
 
 ## Initial Recon
 ### Nmap Results
-```bash
 ```
-
-
+bash
+# Paste nmap output here
+```
 
 Enumeration Findings
 Web (Port 80/443)
