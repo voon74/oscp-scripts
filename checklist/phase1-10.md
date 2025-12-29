@@ -1,18 +1,14 @@
-# OSCP Kali VM Setup Checklist
+### OSCP Kali VM Setup Checklist
 
-## Phase 1: Initial Setup
-- [ ] Download official Kali VM
-- [ ] Import to VMware Pro
-- [ ] Login (kali/kali)
-- [ ] Run: sudo apt update && sudo apt upgrade
+## Phase 1: Initial Kali VM Setup
+- [ ] sudo apt update
+- [ ] sudo apt upgrade -y
+- [ ] sudo apt dist-upgrade -y
 
-## Phase 2: Tool Verification
-- [ ] Check: nmap, gobuster, hydra, metasploit
-- [ ] Verify wordlists: rockyou.txt, seclists
-- [ ] Run: ./check_tools.sh
+## Phase 2: Essential Tool Verification
 
-## Phase 3: Install Missing Tools
-- [ ] Install: enum4linux, smbmap, crackmapexec
-- [ ] Install: evil-winrm, responder, bloodhound
 
-... [Continue with all phases]
+
+
+
+
