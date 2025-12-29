@@ -341,12 +341,70 @@ cat > ~/oscp/notes/strategy.md << 'EOF'
 EOF
 ```
 
+## Phase 8: Aliases & Productivity Setup
+```
+# Add to ~/.bashrc
+cat >> ~/.bashrc << 'EOF'
 
+# OSCP Aliases
+alias oscp='cd ~/oscp'
+alias notes='vim ~/oscp/notes/$(date +%Y%m%d).md'
+alias scan='nmap -sC -sV -oA'
+alias enum='~/oscp/scripts/enum/auto_enum.sh'
+alias recon='~/oscp/scripts/recon/quick_scan.sh'
+alias shot='import -window root ~/screenshots/$(date +%Y%m%d_%H%M%S).png'
 
+# Quick access to wordlists
+alias pass-quick='cat ~/oscp/wordlists/quick/passwords_top20.txt'
+alias dir-quick='cat ~/oscp/wordlists/quick/directories.txt'
+alias user-quick='cat ~/oscp/wordlists/quick/usernames.txt'
 
+# Proof management
+alias proof-user='cat /home/user.txt 2>/dev/null || echo "Not found"'
+alias proof-root='cat /root.txt 2>/dev/null || echo "Not found"'
 
+EOF
 
+# Reload bashrc
+source ~/.bashrc
+```
 
+## Phase 9: Screenshot & Documentation Workflow
+- [ ] sudo apt install -y scrot imagemagick
+
+# Create screenshot script
+- [ ] cat > ~/oscp/scripts/screenshot.sh << 'EOF'
+#!/bin/bash
+# OSCP Screenshot tool
+FILENAME="~/screenshots/$(date +%Y%m%d_%H%M%S).png"
+scrot -s "$FILENAME"
+echo "Screenshot saved: $FILENAME"
+echo "![Screenshot]($FILENAME)" >> ~/oscp/notes/current.md
+EOF
+
+- [ ] chmod +x ~/oscp/scripts/screenshot.sh
+
+## Phase 10: Final Verification & Snapshot
+echo "=== FINAL OSCP VM VERIFICATION ==="
+echo "1. Wordlists:"
+ls -la ~/oscp/wordlists/quick/
+
+echo ""
+echo "2. Scripts:"
+ls -la ~/oscp/scripts/*/
+
+echo ""
+echo "3. Tools (quick test):"
+which nmap gobuster hydra msfconsole
+
+echo ""
+echo "4. Directory structure:"
+tree ~/oscp -L 2
+
+echo ""
+echo "=== READY FOR EXAM ==="
+echo "Take a VM SNAPSHOT now!"
+echo "Name it: 'OSCP_EXAM_READY_$(date +%Y%m%d)'"
 
 
 
