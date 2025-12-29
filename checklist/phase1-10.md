@@ -226,7 +226,8 @@ cat > ~/oscp/templates/machine_template.md << 'EOF'
 ## Initial Recon
 ### Nmap Results
 ```bash
-# Paste nmap output here #
+```
+
 
 
 Enumeration Findings
@@ -296,8 +297,6 @@ What didn't:
 
 Time spent: [hours]
 EOF
-
-
 
 
 
