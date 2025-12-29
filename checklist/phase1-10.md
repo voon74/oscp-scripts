@@ -41,9 +41,9 @@ chmod +x ~/check_tools.sh
 
 ## Phase 3: Install Missing Essentials
 Wordlists (CRITICAL for OSCP)
-sudo apt install -y seclists
-sudo gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
-ls -lh /usr/share/wordlists/rockyou.txt (Should be ~134MB)
+- [ ] sudo apt install -y seclists
+- [ ] sudo gunzip /usr/share/wordlists/rockyou.txt.gz 2>/dev/null
+- [ ] ls -lh /usr/share/wordlists/rockyou.txt (Should be ~134MB)
 
 
 
