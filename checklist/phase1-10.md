@@ -300,6 +300,45 @@ EOF
 
 
 
+### **B. OSCP Exam Strategy Document:**
+```bash
+cat > ~/oscp/notes/strategy.md << 'EOF'
+# OSCP Exam Strategy
+
+## Hour 0-1: Setup & Initial Recon
+1. Connect VPN: sudo openvpn exam.ovpn
+2. Verify targets: ping all IPs
+3. Quick scans on ALL machines: ./quick_scan.sh [IP]
+4. Identify easiest target (usually 25-pointer)
+
+## Hour 1-4: First Machine
+1. Full enumeration on easiest target
+2. Attempt exploitation
+3. Document EVERY step with screenshots
+4. If stuck >45min, move to next target
+
+## Hour 4-12: Additional Machines
+1. Work on 20-point machines
+2. Take notes in template format
+3. Backup notes hourly
+
+## Hour 12-18: AD Set & Hard Machines
+1. Attack AD set (40 points total)
+2. May require pivoting/lateral movement
+3. Document thoroughly
+
+## Hour 18-24: Final Push & Report Start
+1. Start report EARLY (don't wait!)
+2. Try remaining points
+3. Ensure all proofs captured
+4. Sleep 4-6 hours total
+
+## Documentation Rules
+- Screenshot EVERY command
+- Note timestamp for each action
+- Save user.txt and root.txt contents
+- Write reproducible steps
+EOF
 
 
 
