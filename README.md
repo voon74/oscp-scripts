@@ -29,5 +29,26 @@ gobuster dir -u http://$1 -w common.txt
 echo "$(date): $@" >> ~/oscp/command_log.txt
 eval "$@"
 
+#✅ Type 3: Proof Collection Scripts
+# Example: get_proof.sh (ALLOWED)
+#!/bin/bash
+# Collects proof after exploitation
+echo "=== Proof Collection ==="
+whoami
+hostname
+ip addr
+cat /etc/passwd | tail -5
 
+#✅ Type 4: Productivity Scripts
+# Example: setup_target.sh (ALLOWED)
+#!/bin/bash
+# Sets up directories for a new target
+mkdir -p ~/oscp/machines/$1/{scans,loot,proof}
+cp ~/oscp/templates/machine.md ~/oscp/notes/$1.md
+
+## 📁 How to Bring Scripts Into Exam VM:
+Method 1: Pre-load into OffSec Kali VM
+During PEN-100 course, add scripts to their VM
+Save in: ~/oscp/scripts/
+Take snapshot with scripts included
 
