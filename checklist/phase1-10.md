@@ -216,6 +216,40 @@ EOF
 
 chmod +x ~/oscp/scripts/enum/auto_enum.sh
 
+# Phase 7: Note Templates & Documentation
+A. Machine Notes Template:
+cat > ~/oscp/templates/machine_template.md << 'EOF'
+# Machine: [IP]
+# Points: [25/20/20/25/40]
+# Difficulty: [Easy/Medium/Hard]
+
+## Initial Recon
+### Nmap Results
+```bash
+# Paste nmap output here
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
