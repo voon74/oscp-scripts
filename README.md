@@ -22,4 +22,12 @@ notes  # Opens daily notes
 nmap -sC -sV $1
 gobuster dir -u http://$1 -w common.txt
 
+#✅ Type 2: Note-Taking Scripts
+# Example: log_command.sh (ALLOWED)
+#!/bin/bash
+# Logs your commands with timestamps
+echo "$(date): $@" >> ~/oscp/command_log.txt
+eval "$@"
+
+
 
