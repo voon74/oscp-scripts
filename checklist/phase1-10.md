@@ -339,7 +339,7 @@ cat > ~/oscp/notes/strategy.md << 'EOF'
 - Save user.txt and root.txt contents
 - Write reproducible steps
 EOF
-
+```
 
 
 
