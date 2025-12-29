@@ -177,6 +177,46 @@ EOF
 
 chmod +x ~/oscp/scripts/recon/quick_scan.sh
 
+B. Auto-Enumeration Script:
+cat > ~/oscp/scripts/enum/auto_enum.sh << 'EOF'
+#!/bin/bash
+# Auto-enumeration based on open ports
+TARGET=$1
+
+if [ -z "$TARGET" ]; then
+    echo "Usage: $0 <target_ip>"
+    exit 1
+fi
+
+echo "=== Auto-Enumeration for $TARGET ==="
+
+# Check HTTP/HTTPS
+if nmap -p 80 $TARGET | grep -q "open"; then
+    echo "[+] HTTP (80) found"
+    echo "    Directory brute: gobuster dir -u http://$TARGET -w ~/oscp/wordlists/quick/directories.txt"
+fi
+
+if nmap -p 443 $TARGET | grep -q "open"; then
+    echo "[+] HTTPS (443) found"
+    echo "    Check SSL: openssl s_client -connect $TARGET:443 -showcerts"
+fi
+
+if nmap -p 139,445 $TARGET | grep -q "open"; then
+    echo "[+] SMB (139/445) found"
+    echo "    Enum: enum4linux -a $TARGET"
+    echo "    Shares: smbclient -L //$TARGET/ -N"
+fi
+
+if nmap -p 22 $TARGET | grep -q "open"; then
+    echo "[+] SSH (22) found"
+    echo "    Version: nc -nv $TARGET 22"
+    echo "    Brute: hydra -l root -P ~/oscp/wordlists/quick/passwords_top20.txt ssh://$TARGET"
+fi
+EOF
+
+chmod +x ~/oscp/scripts/enum/auto_enum.sh
+
+
 
 
 
