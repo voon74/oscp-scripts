@@ -65,4 +65,24 @@ B. Additional Useful Tools
     binwalk \
     strings
 
+## Phase 4: Create Your OSCP Directory Structure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
