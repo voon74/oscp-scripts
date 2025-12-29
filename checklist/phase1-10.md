@@ -66,9 +66,10 @@ B. Additional Useful Tools
     strings
 
 ## Phase 4: Create Your OSCP Directory Structure
+Create the standard OSCP exam structure
+- [ ] mkdir -p ~/oscp/{machines,notes,scans,loot,proof,scripts,templates,wordlists}
 
-
-
+ Subdirectories for organization
 
 
 
