@@ -81,6 +81,7 @@ nmap -sC -sV $TARGET
 ```
 
 📊 OSCP Exam Network Layout:
+```
 Your Kali VM (tun0: 10.11.1.x)
        │
        VPN
@@ -90,7 +91,7 @@ Your Kali VM (tun0: 10.11.1.x)
        ├── 10.11.1.15   (20 pts)
        ├── 10.11.1.20   (25 pts)
        └── 10.11.1.100-120  (AD set - 40 pts)
-           
+```    
 
 Before Exam:
 # Review ALL your scripts
