@@ -1,12 +1,13 @@
 Phase 1: Initial Scans (Hour 0-1)
-# Create target list
+Create target list
 TARGETS="10.11.1.5 10.11.1.10 10.11.1.15 10.11.1.20 10.11.1.100 10.11.1.110 10.11.1.120"
 
-# Quick alive check on ALL targets
+Quick alive check on ALL targets
+```
 for ip in $TARGETS; do
     ping -c 1 -W 1 $ip && echo "$ip is alive"
 done
-
+```
 # Basic service scan on all (parallel)
 for ip in $TARGETS; do
     nmap -sC -sV -oA ~/oscp/scans/initial_$ip $ip &
