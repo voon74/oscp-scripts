@@ -9,29 +9,36 @@ for ip in $TARGETS; do
     ping -c 1 -W 1 $ip && echo "$ip is alive"
 done
 ```
-# Basic service scan on all (parallel)
+Basic service scan on all (parallel)
+```
 for ip in $TARGETS; do
     nmap -sC -sV -oA ~/oscp/scans/initial_$ip $ip &
 done
-
+```
 
 Phase 2: Focused Enumeration
-# Pick easiest target first (usually 25-pointer)
-# Do FULL enumeration on that ONE machine
+Pick easiest target first (usually 25-pointer)
+Do FULL enumeration on that ONE machine
+```
 nmap -p- --min-rate=1000 -T4 10.11.1.5 -oN full_ports.txt
-
-# Then service scan on open ports
+```
+Then service scan on open ports
+```
 ports=$(grep "^[0-9]" full_ports.txt | cut -d'/' -f1 | tr '\n' ',')
 nmap -sC -sV -p$ports 10.11.1.5 -oN services.txt
+```
 
 Solution: Be precise with your scans
-# GOOD: Only scan provided IPs
+GOOD: Only scan provided IPs
+```
 TARGETS="10.11.1.5 10.11.1.10 10.11.1.15 10.11.1.20"
 for ip in $TARGETS; do
     ping -c 1 $ip  # ONLY provided IPs
 done
+```
 
 🔧 Safe Scanning Script for OSCP:
+```
 cat > ~/oscp/scripts/safe_scan.sh << 'EOF'
 #!/bin/bash
 # OSCP-safe scanner - only scans provided targets
@@ -61,15 +68,18 @@ done < "$TARGET_FILE"
 
 echo "[+] All scans completed safely"
 EOF
-
+```
+```
 chmod +x ~/oscp/scripts/safe_scan.sh
+```
 
 Good Practice:
-# KNOW your target IP (e.g., from platform)
+KNOW your target IP (e.g., from platform)
+```
 TARGET=10.10.10.100
-
 # Scan ONLY that IP
 nmap -sC -sV $TARGET
+```
 
 📊 OSCP Exam Network Layout:
 Your Kali VM (tun0: 10.11.1.x)
