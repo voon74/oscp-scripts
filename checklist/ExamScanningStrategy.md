@@ -77,7 +77,6 @@ Good Practice:
 KNOW your target IP (e.g., from platform)
 ```
 TARGET=10.10.10.100
-# Scan ONLY that IP
 nmap -sC -sV $TARGET
 ```
 
