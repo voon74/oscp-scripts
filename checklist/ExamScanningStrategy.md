@@ -1,7 +1,8 @@
 Phase 1: Initial Scans (Hour 0-1)
 Create target list
+```
 TARGETS="10.11.1.5 10.11.1.10 10.11.1.15 10.11.1.20 10.11.1.100 10.11.1.110 10.11.1.120"
-
+```
 Quick alive check on ALL targets
 ```
 for ip in $TARGETS; do
