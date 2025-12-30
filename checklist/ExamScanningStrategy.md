@@ -94,11 +94,13 @@ Your Kali VM (tun0: 10.11.1.x)
 ```    
 
 Before Exam:
-# Review ALL your scripts
+Review ALL your scripts
+```
 grep -r "0/24\|/16\|/8" ~/oscp/scripts/
 grep -r "nmap.*scan" ~/oscp/scripts/
-
+```
 ✅ Your OSCP Exam Scanning Workflow:
+```
 Step 1: Document Targets
 echo "10.11.1.5    # 25 points" > ~/oscp/targets.txt
 echo "10.11.1.10   # 20 points" >> ~/oscp/targets.txt
@@ -107,7 +109,8 @@ echo "10.11.1.20   # 25 points" >> ~/oscp/targets.txt
 echo "10.11.1.100  # AD DC" >> ~/oscp/targets.txt
 echo "10.11.1.110  # AD WS1" >> ~/oscp/targets.txt
 echo "10.11.1.120  # AD WS2" >> ~/oscp/targets.txt
-
+```
+```
 Step 2: Safe Initial Scan
 # Use your safe scanner
 ./safe_scan.sh
@@ -116,12 +119,13 @@ Step 2: Safe Initial Scan
 for ip in $(cat ~/oscp/targets.txt | cut -d' ' -f1); do
     nmap -sC -sV -oA ~/oscp/scans/initial_$ip $ip &
 done
-
+```
+```
 Step 3: Focused Attacks
 # Pick based on scan results
 # Example: 10.11.1.5 has port 80 open
 gobuster dir -u http://10.11.1.5 -w ~/oscp/wordlists/quick/directories.txt
-
+```
 
 
 
