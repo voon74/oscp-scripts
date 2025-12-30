@@ -14,7 +14,6 @@
 nmap -sC -sV -oA nmap/initial 10.10.10.10
 
 ---
-
 ## 🔧 **Tools to Enhance Your Notes:**
 1. **Typora** or **Obsidian** - Beautiful Markdown editors
 2. **Mermaid** (GitHub supports it) - For diagrams:
@@ -25,3 +24,4 @@ graph TD
     C --> D{Shell?}
     D -->|Yes| E[PrivEsc]
     D -->|No| B
+```
