@@ -1,8 +1,8 @@
 Understanding the OSI model helps map where attacks happen and how to defend effectively.
 
-1️⃣ Physical Layer
-⚠️ Attacks: Cable tapping, device theft, hardware tampering
-🛡️ Controls: Physical security, CCTV, access control
+###1️⃣ Physical Layer
+##⚠️ Attacks: Cable tapping, device theft, hardware tampering
+#🛡️ Controls: Physical security, CCTV, access control
 
 2️⃣ Data Link Layer
 ⚠️ Attacks: ARP spoofing, MAC flooding, VLAN hopping
